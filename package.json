@@ -1,0 +1,24 @@
+{
+  "name": "travelidea",
+  "version": "1.0.0",
+  "description": "Our new travel idea ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Meharban-Singh/travelIdea.git"
+  },
+  "author": "Meharban-Singh and Jaskirat-Singh-Grewal",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/Meharban-Singh/travelIdea/issues"
+  },
+  "homepage": "https://github.com/Meharban-Singh/travelIdea#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "nodemon": "^2.0.2"
+  }
+}
