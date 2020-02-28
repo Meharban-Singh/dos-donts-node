@@ -7,6 +7,8 @@ app.engine('handlebars', exhbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.set('port', process.env.PORT || 80);
 
+app.use(express.static(__dirname + '/public'));
+
 app.get('/', (req, res) => {
     res.render("index");
 });
