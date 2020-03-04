@@ -1,20 +1,15 @@
 const express = require("express");
 const app = express();
-const exhbs = require("express-handlebars");
+const fs = require('fs');
 
-app.engine('handlebars', exhbs({ defaultLayout: 'main' }));
-
-app.set('view engine', 'handlebars');
 app.set('port', process.env.PORT || 80);
 
-app.use(express.static(__dirname + '/public'));
-
-app.get('/', (req, res) => {
-    res.render("index");
-});
-
 app.get('/:country',(req, res) => {
-    res.status(200).send(req.params.country);
+    fs.readFile('./data/' + req.params.country + ".txt", (err, data) => {
+        if(err) throw new Error("File Read Error: " + err.message);
+
+        res.status(200).send(data.toString());
+    });
 });
 
 app.listen(app.get('port'), () => {
